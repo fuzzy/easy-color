@@ -8,6 +8,7 @@ Usage examples:
 ```ruby
 require 'easy-color'
 
+puts "#{'**'.bold.cyan.bg(:yellow)} yay backgrounds!"
 puts "#{'**'.bold.cyan} OOH I just made a prompt!"
 puts "IMPORTANT!!".bold.underline.red
 ```
