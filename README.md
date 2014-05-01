@@ -1,5 +1,6 @@
 easy-color
 ==========
+[![Gem Version](https://badge.fury.io/rb/easy-color.svg)](http://badge.fury.io/rb/easy-color)
 
 A simple monkeypatch for String that adds support for standard ANSI escape sequences, including color, video attributes, and cursor placement.
 
