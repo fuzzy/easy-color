@@ -52,15 +52,27 @@ class String
   end      
 
   def fg(color)
-    "\033[#{$color[color]}m#{self}\033[0m" if valid(:color => color)
+    if $stdout.isatty
+      "\033[#{$color[color]}m#{self}\033[0m" if valid(:color => color)
+    else
+      "#{self}"
+    end
   end
 
   def bg(color)
-    "\033[#{($color[color]+10)}m#{self}\033[0m" if valid(:color => color)
+    if $stdout.isatty
+      "\033[#{($color[color]+10)}m#{self}\033[0m" if valid(:color => color)
+    else
+      "#{self}"
+    end
   end
 
   def attr(attr)
-    "\033[#{($attrs[attr])}m#{self}\033[0m" if valid(:attr => attr)
+    if $stdout.isatty
+      "\033[#{($attrs[attr])}m#{self}\033[0m" if valid(:attr => attr)
+    else
+      "#{self}"
+    end
   end
 
   def method_missing(m, *args, &block)
